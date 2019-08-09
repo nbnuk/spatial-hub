@@ -249,7 +249,7 @@ skin:
     header: true
     footer: true
     fluidLayout: true
-    layout: 'portal'
+    layout: 'generic'
     orgNameLong: 'Atlas of Living Australia'
 
 speciesDotSize: 5
