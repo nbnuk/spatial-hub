@@ -506,7 +506,8 @@
                                     opacity: id.opacity / 100.0,
                                     layers: 'ALA:occurrences',
                                     format: 'image/png',
-                                    q: id.qid,
+                                    /* q: id.qid, seems invalid */
+                                    q: id.q,
                                     ENV: env,
                                     transparent: true,
                                     continuousWorld: true

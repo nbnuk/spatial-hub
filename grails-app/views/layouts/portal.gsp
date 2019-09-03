@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en">
 <head>
     <g:if test="${config == null}">
         <g:set var="config" value="${grailsApplication.config}"/>
@@ -8,8 +8,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="app.version" content="${g.meta(name: 'app.version')}"/>
     <meta name="app.build" content="${g.meta(name: 'app.build')}"/>
-    <meta name="description" content="Atlas of Living Australia"/>
-    <meta name="author" content="Atlas of Living Australia">
+    <meta name="description" content="NBN Atlas"/>
+    <meta name="author" content="NBN Atlas">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="${config.favicon.url}" rel="shortcut icon"
           type="image/x-icon"/>
