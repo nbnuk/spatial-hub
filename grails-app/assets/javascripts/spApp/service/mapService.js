@@ -507,8 +507,7 @@
                                     opacity: id.opacity / 100.0,
                                     layers: 'ALA:occurrences',
                                     format: 'image/png',
-                                    /* q: id.qid, seems invalid */
-                                    q: id.q,
+                                    q: id.qid,
                                     ENV: env,
                                     transparent: true,
                                     continuousWorld: true
@@ -516,6 +515,9 @@
                                 // temporarily use the same legend as colorType == 'grid'
                                 , legendurl: $SH.baseUrl + "/assets/gridlegend.png"
                             };
+
+                            //console.log("New layer added:");
+                            //console.log(newLayer);
 
                             //restore selection fq
                             if (fq !== undefined) {

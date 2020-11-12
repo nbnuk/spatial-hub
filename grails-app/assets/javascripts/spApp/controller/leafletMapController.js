@@ -33,7 +33,7 @@
                             check: "fa fa-toggle-on"
                         }
                     },
-                    australia: {
+                    uk: {
                         lat: $SH.defaultLat,
                         lng: $SH.defaultLng,
                         zoom: $SH.defaultZoom

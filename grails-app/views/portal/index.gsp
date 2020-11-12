@@ -135,7 +135,7 @@
         </g:if>
     };
 
-    console.log($SH);
+    //console.log($SH);
 
     BIE_VARS = {
         autocompleteUrl: '${config?.autocompleteUrl}'

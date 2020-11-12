@@ -37,11 +37,8 @@
             <!-- Your site title as branding in the menu -->
             <div class="navbar-header">
                 <div>
-                    <a href="https://www.ala.org.au/" class="custom-logo-link navbar-brand" itemprop="url">
-                        <img width="1005" height="150" src="https://www.ala.org.au/app/uploads/2019/01/logo.png"
-                             class="custom-logo" alt="Atlas of Living Australia" itemprop="image"
-                             srcset="https://www.ala.org.au/app/uploads/2019/01/logo.png 1005w, https://www.ala.org.au/app/uploads/2019/01/logo-300x45.png 300w, https://www.ala.org.au/app/uploads/2019/01/logo-768x115.png 768w"
-                             sizes="(max-width: 1005px) 100vw, 1005px"></a>
+                    <a href="https://nbnatlas.org/" class="custom-logo-link navbar-brand" itemprop="url">
+                        <img alt="brand" class="brand img-responsive" src="https://layout.nbnatlas.org/uk/spatial_logo.png "></a>
                     <!-- end custom logo -->
                 </div>
 
@@ -131,39 +128,39 @@
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-41958"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41958 nav-item">
-                                        <a title="Search species" href="https://bie.ala.org.au/"
+                                        <a title="Search species" href="https://species.nbnatlas.org/"
                                            class="dropdown-item">Search
                                         species</a></li>
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-23"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23 nav-item">
                                         <a title="Search &amp; download records"
-                                           href="https://biocache.ala.org.au/search#tab_simpleSearch"
+                                           href="https://records.nbnatlas.org/search#tab_simpleSearch"
                                            class="dropdown-item">Search &amp; download records</a></li>
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-28"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28 nav-item">
-                                        <a title="Search datasets" href="https://collections.ala.org.au/datasets"
+                                        <a title="Search datasets" href="https://registry.nbnatlas.org/datasets"
                                            class="dropdown-item">Search datasets</a></li>
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-41967" role="separator" class="divider"></li>
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-24"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24 nav-item">
-                                        <a title="Spatial analysis (Spatial Portal)" href="https://spatial.ala.org.au/"
+                                        <a title="Spatial analysis (Spatial Portal)" href="https://spatial-service.nbnatlas.org/"
                                            class="dropdown-item">Spatial analysis (Spatial Portal)</a></li>
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-26"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26 nav-item">
                                         <a title="Explore your area"
-                                           href="https://biocache.ala.org.au/explore/your-area"
+                                           href="https://records.nbnatlas.org/explore/your-area"
                                            class="dropdown-item">Explore
                                         your area</a></li>
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-31"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31 nav-item">
                                         <a title="Explore natural history collections"
-                                           href="https://collections.ala.org.au/" class="dropdown-item">Explore natural
+                                           href="https://registry.nbnatlas.org/" class="dropdown-item">Explore natural
                                         history collections</a></li>
                                 </ul>
                             </li>
@@ -178,36 +175,18 @@
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-40773"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40773 nav-item">
-                                        <a title="Share your dataset"
-                                           href="https://support.ala.org.au/support/solutions/articles/6000195493-how-to-submit-a-data-set"
-                                           class="dropdown-item">Share your dataset</a></li>
+                                        <a title="Join or donate"
+                                           href="https://nbn.org.uk/join-or-donate/"
+                                           class="dropdown-item">Join or donate</a></li>
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-40728"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40728 nav-item">
                                         <a title="Upload species list"
-                                           href="https://lists.ala.org.au/public/speciesLists"
+                                           href="https://lists.nbnatlas.org/public/speciesLists"
                                            class="dropdown-item">Upload
                                         species list</a></li>
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-41968" role="separator" class="divider"></li>
-                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
-                                        id="menu-item-33"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-33 nav-item">
-                                        <a title="Record a sighting"
-                                           href="https://biocollect.ala.org.au/bioActivity/create/e61eb018-02a9-4e3b-a4b3-9d6be33d9cbb?returnTo=%2Fsightings%2FbioActivity%2FprojectRecords%2Ff813c99c-1a1d-4096-8eeb-cbc40e321101&amp;hub=sightings"
-                                           class="dropdown-item">Record a sighting</a></li>
-                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
-                                        id="menu-item-35"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35 nav-item">
-                                        <a title="Transcribe &amp; digitise (DigiVol)"
-                                           href="https://volunteer.ala.org.au/" class="dropdown-item">Transcribe &amp;
-                                        digitise (DigiVol)</a></li>
-                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
-                                        id="menu-item-37"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37 nav-item">
-                                        <a title="Discover citizen science projects"
-                                           href="https://biocollect.ala.org.au/acsa?hub=ala-cs#isCitizenScience%3Dtrue%26isWorldWide%3Dfalse%26max%3D20%26sort%3DdateCreatedSort"
-                                           class="dropdown-item">Discover citizen science projects</a></li>
                                 </ul>
                             </li>
                             <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
@@ -221,17 +200,17 @@
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-179"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-179 nav-item">
-                                        <a title="About us" href="https://www.ala.org.au/about-ala/"
+                                        <a title="About us" href="https://nbn.org.uk/about-us/"
                                            class="dropdown-item">About us</a></li>
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-40734"
                                         class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-40734 nav-item">
-                                        <a title="News &amp; media" href="https://www.ala.org.au/blog/"
+                                        <a title="News &amp; media" href="https://nbn.org.uk/news-events-publications/"
                                            class="dropdown-item">News &amp; media</a></li>
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-175"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-175 nav-item">
-                                        <a title="Contact us" href="https://www.ala.org.au/contact-us/"
+                                        <a title="Contact us" href="https://nbn.org.uk/about-us/who-we-are/contact-us/"
                                            class="dropdown-item">Contact us</a></li>
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-41969" role="separator" class="divider"></li>
@@ -243,24 +222,13 @@
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-40730"
                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40730 nav-item">
-                                        <a title="Education resources"
-                                           href="https://www.ala.org.au/education-resources/"
-                                           class="dropdown-item">Education
+                                        <a title="Tools, resources and publications"
+                                           href="https://nbn.org.uk/tools-and-resources/"
+                                           class="dropdown-item">Tools, resources and publications
                                         resources</a></li>
-                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
-                                        id="menu-item-177"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-177 nav-item">
-                                        <a title="Indigenous ecological knowledge"
-                                           href="https://www.ala.org.au/indigenous-ecological-knowledge/"
-                                           class="dropdown-item">Indigenous ecological knowledge</a></li>
+
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-41970" role="separator" class="divider"></li>
-                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
-                                        id="menu-item-41796"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41796 nav-item">
-                                        <a title="All sites, services &amp; tools"
-                                           href="https://www.ala.org.au/sites-and-services/" class="dropdown-item">All
-                                        sites, services &amp; tools</a></li>
                                 </ul>
                             </li>
                             <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
@@ -274,31 +242,20 @@
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-41959"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41959 nav-item">
-                                        <a title="Browse all articles (FAQs)"
-                                           href="https://support.ala.org.au/support/home" class="dropdown-item">Browse
-                                        all articles (FAQs)</a></li>
-                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
-                                        id="menu-item-41960"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41960 nav-item">
-                                        <a title="ALA Data help"
-                                           href="https://support.ala.org.au/support/solutions/6000137994"
-                                           class="dropdown-item">ALA Data help</a></li>
-                                    <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
-                                        id="menu-item-41961"
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41961 nav-item">
-                                        <a title="ALA Tools &amp; Apps help"
-                                           href="https://support.ala.org.au/support/solutions/6000138053"
-                                           class="dropdown-item">ALA Tools &amp; Apps help</a></li>
+                                        <a title="Blogs"
+                                           href="https://nbn.org.uk/blogs/" class="dropdown-item">Blogs</a></li>
+
+
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-41962"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41962 nav-item">
-                                        <a title="ALA Spatial Portal help"
-                                           href="https://support.ala.org.au/support/solutions/6000138349"
-                                           class="dropdown-item">ALA Spatial Portal help</a></li>
+                                        <a title="Spatial Portal help"
+                                           href=""
+                                           class="dropdown-item">NBN Spatial Portal help (to do)</a></li>
                                     <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"
                                         id="menu-item-41963"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-41963 nav-item">
-                                        <a title="Contact us" href="https://www.ala.org.au/contact-us/"
+                                        <a title="Contact us" href="https://nbn.org.uk/about-us/who-we-are/contact-us/"
                                            class="dropdown-item">Contact us</a>
                                     </li>
                                 </ul>

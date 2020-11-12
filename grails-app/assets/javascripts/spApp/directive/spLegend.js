@@ -388,7 +388,9 @@
 
                         scope.facetClearSelection = function () {
                             if (scope.selected.layer !== undefined) {
+                                console.log("in facetClearSelection"); // RR ***
                                 for (var i = 0; i < scope.selected.layer.facetList[scope.selected.layer.facet].length; i++) {
+                                    console.log(scope.selected.layer.facetList[scope.selected.layer.facet][i]); // RR ***
                                     scope.selected.layer.facetList[scope.selected.layer.facet][i].selected = false
                                 }
                                 scope.updateSelection()
@@ -401,7 +403,7 @@
                             } else {
                                 scope.facetClearSelection()
                             }
-                        }
+                        };
 
                         scope.facetSelectAll = function () {
                             if (scope.selected.layer !== undefined) {
@@ -424,7 +426,7 @@
                                 return true;
                             }
                             return false;
-                        }
+                        };
 
                         scope.updateSelection = function (isFacetList) {
                             if (scope.selected.layer !== undefined) {
@@ -499,13 +501,19 @@
                             }
                         };
 
+                        scope.getX = function() {
+                            console.log('abc');
+                        };
+
                         scope.formatColor = function (item) {
+                            //console.log(item); //not being called at all RR *** figure out how to fix reference in template file
                             var r = Number(item.red).toString(16);
                             if (r.length === 1) r = '0' + r;
                             var g = Number(item.green).toString(16);
                             if (g.length === 1) g = '0' + g;
                             var b = Number(item.blue).toString(16);
                             if (b.length === 1) b = '0' + b;
+                            console.log(r + g + b);
                             return r + g + b
                         };
 
@@ -539,6 +547,8 @@
                             var promises = [];
 
                             var queue = [];
+
+                            console.log("here in speciesListToFacetList"); // RR ***
 
                             var ci = 0;
                             for (var key in data) {

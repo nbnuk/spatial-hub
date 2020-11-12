@@ -37,6 +37,8 @@
                             $.map(MapService.areaLayers(), function (x, idx) {
 
                                 // Incompatible areas have area.pid.contains(':')
+                                //console.log("in addLayerAreas-----");
+                                //console.log(x);
                                 if (x.pid !== undefined || !x.pid.contain(':')) {
                                     scope.layerAreas.push({
                                         name: x.name,
@@ -80,6 +82,7 @@
 
                         $timeout(function () {
                             scope.addLayerAreas();
+                            //console.log("in selectArea timeout.....");
                             if (scope.selected === '' || scope.selected === scope.create) {
                                 if (scope.layerAreas.length > 0) {
                                     scope._selectedArea.area[0] = scope.layerAreas[0];
@@ -104,6 +107,7 @@
                                     scope.selected = scope._selectedArea.area[0].uid
                                 }
                             }
+                            //console.log(scope);
                         }, 0);
                     }
                 }

@@ -8,8 +8,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="app.version" content="${g.meta(name: 'app.version')}"/>
     <meta name="app.build" content="${g.meta(name: 'app.build')}"/>
-    <meta name="description" content="Atlas of Living Australia"/>
-    <meta name="author" content="Atlas of Living Australia">
+    <meta name="description" content="${config.skin?.orgNameLong ?: 'Atlas of Living Australia'}"/>
+    <meta name="author" content="${config.skin?.orgNameLong ?: 'Atlas of Living Australia'}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="${config.favicon.url}" rel="shortcut icon" type="image/x-icon"/>
     <link href="${config.headerAndFooter.baseURL}/css/bootstrap.min.css" rel="stylesheet" media="all"/>

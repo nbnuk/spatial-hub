@@ -77,7 +77,7 @@
                             } else {
                                 scope.facetClearSelection()
                             }
-                        }
+                        };
 
                         scope.facetSelectAll = function () {
                             if (scope._facet !== undefined) {
@@ -98,7 +98,7 @@
                                 return true;
                             }
                             return false;
-                        }
+                        };
 
                         scope.updateSelection = function () {
                             scope._onCustom();

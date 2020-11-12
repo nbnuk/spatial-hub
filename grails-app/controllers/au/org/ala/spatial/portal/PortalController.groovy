@@ -129,6 +129,7 @@ class PortalController {
 
         def hub = params.hub
 
+        log.info("hub = " + hub.toString());
         if (params?.silent) {
             render html: '<html>' + (authService.userId != null ? 'isLoggedIn' : 'isLoggedOut') + '</html>'
         } else if (request.requestURL.contains(';jsessionid=')) {

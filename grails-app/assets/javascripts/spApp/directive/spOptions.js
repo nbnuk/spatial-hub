@@ -106,7 +106,7 @@
                             for (k in $SH.projections) {
                                 count++;
                             }
-                            return count > 1;
+                            return count > 0; //show even if only one available
                         }
 
                     }
