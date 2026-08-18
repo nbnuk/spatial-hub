@@ -624,6 +624,13 @@ spApp:
         emptyValueMsg: "Year not specified"
         hideEmptyValues: true
         disableBiocacheQueryOnClick: true
+    layers:
+      species:
+        enabledColorTypes:
+          - grid
+          - point
+        defaults:
+          colorType: '-1'
 
 rangeDataTypes:
   - 'tint'

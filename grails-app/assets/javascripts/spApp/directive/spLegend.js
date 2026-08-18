@@ -386,6 +386,72 @@
                             }
                         };
 
+                        scope.specieslayerColorTypesEnabled = $SH.config.layers.species.enabledColorTypes;
+                        scope.specieslayerColorTypes = {
+                            "point": {
+                                i18n: 126,
+                                display: "Points",
+                                value: "-1"
+                            },
+                            "grid": {
+                                i18n: 125,
+                                display: "Density grid",
+                                value: "grid"
+                            },
+                            "osgrid": {
+                                i18n: 900,
+                                display: "Ordnance Survey Grids",
+                                value: "osgrid"
+                            }
+
+                        };
+
+                        scope.layerTypeEnabled = function(layerType) {
+                            return $SH.config.layers.species.enabledTypes.indexOf(layerType) !== -1;
+                        };
+
+                        scope.$on('leafletDirectiveMap.map.zoomend', function (event, args) {
+                            scope.setGridSizeDisplay(args.leafletEvent.target.getZoom());
+                        });
+
+                        scope.setGridResolution = function (gridResolution) {
+                            if (scope.selected.layer !== undefined) {
+                                scope.selected.layer.gridResolution = gridResolution;
+                                scope.updateWMS()
+                            }
+                        };
+
+                        scope.setGridSizeDisplay = function (zoom) {
+                                var gridSizeInMeters;
+
+                                if (zoom < 6) {
+                                    gridSizeInMeters = 100000;
+                                } else if (zoom < 8) {
+                                    gridSizeInMeters = 50000;
+                                } else if (zoom < 9) {
+                                    gridSizeInMeters = 10000;
+                                } else if (zoom === 9) {
+                                    gridSizeInMeters = 2000;
+                                } else if (zoom < 13) {
+                                    gridSizeInMeters = 1000;
+                                } else {
+                                    gridSizeInMeters = 100;
+                                }
+
+                                var units = gridSizeInMeters > 100 ? 'km' : 'm';
+                                var unitsMultiplier =  gridSizeInMeters > 100 ? 0.001 : 1;
+
+                                scope.gridSizeDisplay = 'Displaying ' + gridSizeInMeters * unitsMultiplier + units + ' grids';
+                                scope.gridSizeInMeters = gridSizeInMeters;
+                        }
+
+                        scope.showGridLabelsChanged = function (showGridLabels) {
+                            if (scope.selected.layer !== undefined) {
+                                scope.selected.layer.showGridLabels = showGridLabels;
+                                scope.updateWMS()
+                            }
+                        };
+
                         scope.facetNewLayer = function () {
                             var selectedLayer = scope.selected.layer;
                             if (selectedLayer !== undefined) {
@@ -969,6 +1035,9 @@
                                     } else if (selectedLayer.colorType === 'grid') {
                                         firstLayer.layerParams.ENV = 'colormode%3Agrid%3Bname%3Acircle%3Bsize%3A' +
                                             selectedLayer.size + '%3Bopacity%3A1'
+                                    } else if (selectedLayer.colorType === 'osgrid') {
+                                        firstLayer.layerParams.ENV = 'color%3A' + selectedLayer.color + '%3Bcolormode%3Aosgrid%3Bname%3Acircle%3Bsize%3A' +
+                                            selectedLayer.size + '%3Bgridres%3A' + selectedLayer.gridResolution + '%3Bopacity%3A1' + (selectedLayer.showGridLabels ? '%3Bgridlabels%3Aon' : '')
                                     } else if (selectedLayer.colorType === '-1') {
                                         // do not use layer.facet as colour mode if it is a species_list
                                         if (selectedLayer.facet === '-1' || selectedLayer.facet.indexOf('species_list') == 0) {

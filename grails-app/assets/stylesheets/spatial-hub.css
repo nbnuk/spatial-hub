@@ -1130,3 +1130,19 @@ ul.errors {
     background-color: #000000;
     border-width: 0;
 }
+
+
+.osgrid-key > dt {
+    width: 25px;
+}
+
+.osgrid-key > dd {
+    margin-left: 45px;
+}
+
+.osgrid-key > dt > div {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+}
+

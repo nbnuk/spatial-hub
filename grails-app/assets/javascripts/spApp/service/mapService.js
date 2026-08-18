@@ -515,6 +515,10 @@
                             // the display of species layers can be modified with 'facets' that hide items
                             id.facets = []
 
+                            if($SH.config.layers.species.defaults){
+                                angular.extend(id, $SH.config.layers.species.defaults);
+                            }
+
                             var env = 'colormode%3Agrid%3Bname%3Acircle%3Bsize%3A3%3Bopacity%3A1';
                             var firstLayer = undefined;
                             if (id && id.layer && id.layer.leaflet && id.layer.leaflet.layerOptions &&
@@ -582,8 +586,8 @@
                                 if (id.count == 0 && id.fromSave === undefined) {
                                     bootbox.alert(id.name + "<br/><br/>" + $i18n(475, "No occurrences mapped for this layer and applied filters."))
                                 }
-                                if (id.count < 100000 && id.fromSave === undefined) {
-                                    id.colorType = '-1'
+                                if (id.count < 100000 && id.fromSave === undefined && id.colorType === 'grid') {
+                                    id.colorType = '-1';
                                 }
                             }));
                         } else {

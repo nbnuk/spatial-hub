@@ -65,18 +65,15 @@
         </div>
 
         <div class="form-group row" ng-show="selected.layer.layertype == 'species' &&
-        (selected.layer.facet == -1 || selected.layer.colorType == 'grid')">
+        (selected.layer.facet == -1 || selected.layer.colorType == 'grid' || selected.layer.colorType == 'osgrid')">
             <label i18n="124" style=";width:70px">Display as</label>
-            <input type="radio" ng-model="selected.layer.colorType" ng-change="setColorType('grid')"
-                   value="grid">
-            <label i18n="125" style="padding-right:30px">Density grid</label>
-            <input type="radio" ng-model="selected.layer.colorType" ng-change="setColorType('-1')"
-                   value="-1">
-            <label i18n="126">Points</label>
+            <input ng-repeat-start="colorType in specieslayerColorTypesEnabled" type="radio" ng-model="selected.layer.colorType" ng-change="setColorType(specieslayerColorTypes[colorType].value)"
+                   ng-value="specieslayerColorTypes[colorType].value">
+            <label ng-repeat-end i18n="specieslayerColorTypes[colorType].i18n" >specieslayerColorTypes[colorType].display</label>
         </div>
 
         <div class="form-group row"
-             ng-show="selected.layer.layertype == 'species' && selected.layer.colorType != 'grid'">
+             ng-show="selected.layer.layertype == 'species' && selected.layer.colorType != 'grid' && selected.layer.colorType != 'osgrid'">
             <label i18n="127" style=";width:70px">Facet</label>
             <select style=";width:300px" id='facet' ng-model="selected.layer.facet"
                     ng-change="updateFacet()" testTag="facetInLegend">
@@ -119,8 +116,30 @@
             <br/>
             <hr/>
         </div>
+        <div ng-show="(selected.layer.layertype == 'species' && selected.layer.colorType=='osgrid' &&
+                                        selected.layer.facet=='-1')"
+             class="form-group row">
 
-        <div ng-show="(selected.layer.layertype == 'species' && selected.layer.colorType=='-1' &&
+            <label i18n="901">Grid size options</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" ng-model="selected.layer.gridResolution" ng-change="setGridResolution('variablegrid')"
+                       value="variablegrid" />
+                <label class="form-check-label" i18n="902" >Variable grid size</label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" ng-model="selected.layer.gridResolution" ng-change="setGridResolution('singlegrid')"
+                       value="singlegrid" />
+                <label class="form-check-label" i18n="903"   style="padding-right:30px">Responsive resolution</label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" ng-model="selected.layer.gridResolution" ng-change="setGridResolution('10kgrid')"
+                       value="10kgrid" />
+                <label class="form-check-label" i18n="904" >10km grid only</label>
+            </div>
+        </div>
+        <div ng-show="(selected.layer.layertype == 'species' && (selected.layer.colorType=='-1' || (selected.layer.colorType=='osgrid' && selected.layer.gridResolution != 'variablegrid')) &&
                                         selected.layer.facet=='-1') || selected.layer.layertype == 'area'"
              class="form-group row">
             <grid id="cpGrid" style="padding-left:2px;padding-top:5px;width:280px;display:block">
@@ -294,7 +313,7 @@
         </div>
 
         <div class="form-group row" id="helpdebug2"
-             ng-show="selected.layer.layertype == 'species' && selected.layer.colorType!='grid'">
+             ng-show="selected.layer.layertype == 'species' && selected.layer.colorType.indexOf('grid') === -1">
             <label i18n="136" style="float:left;width:70px" for="size">Size</label>
             <div style="float:left;width:200px" id="size" ui-slider min="1" max="15"
                  ng-model="selected.layer.size"></div>
@@ -401,7 +420,7 @@
         </div>
 
         <div class="form-group row"
-             ng-show="selected.layer.layertype == 'species' && selected.layer.colorType != 'grid'">
+             ng-show="selected.layer.layertype == 'species' && selected.layer.colorType.indexOf('grid') === -1">
 
             <input type="checkbox" id="uncertainty"
                    ng-change="setUncertainty(chkUncertainty)" ng-model="chkUncertainty">
@@ -417,6 +436,39 @@
                     i18n="148">&gt; 30km
                 (mapped with
                 30km radius)</label></div>
+        </div>
+
+        <div ng-show="selected.layer.colorType === 'osgrid'">
+            <dl class="dl-horizontal osgrid-key">
+                    <dt ng-if-start="selected.layer.gridResolution === 'variablegrid'"><div style="background-color:#00fff7" style="height: 18px;"></div></dt>
+                    <dd i18n="906" >100km grid</dd>
+
+                    <dt><div style="background-color:#ffa200" style="height: 18px;"></div></dt>
+                    <dd i18n="907" >50km grid</dd>
+
+                    <dt><div style="background-color:#FFFF00" style="height: 18px;"></div></dt>
+                    <dd i18n="908" >10km grid</dd>
+
+                    <dt><div style="background-color:#0000FF" style="height: 18px;"></div></dt>
+                    <dd i18n="909" >2km grid</dd>
+
+                    <dt><div style="background-color:#00FF00" style="height: 18px;"></div></dt>
+                    <dd i18n="910" >1km grid</dd>
+
+                    <dt><div style="background-color:#FF0000" style="height: 18px;"></div></dt>
+                    <dd ng-if-end i18n="911" >100m grid</dd>
+
+                    <dt ng-if-start="selected.layer.gridResolution !== 'variablegrid'"><div ng-style="{'background-color': '#' + selected.layer.color}" style="height: 18px;"></div></dt>
+                    <dd ng-if-end>{{gridSizeDisplay}}</dd>
+            </dl>
+        </div>
+
+        <div class="form-group row"
+             ng-show="selected.layer.layertype == 'species' && selected.layer.colorType === 'osgrid'">
+
+            <input type="checkbox" id="showGridLabels"
+                   ng-change="showGridLabelsChanged(selected.layer.showGridLabels)" ng-model="selected.layer.showGridLabels">
+            <label i18n="905" for="showGridLabels" style="width:300px">Display grid reference labels</label>
         </div>
 
         <div class="form-group row"
