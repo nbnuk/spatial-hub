@@ -4,8 +4,7 @@ jdk:
 sudo: false
 branches:
   only:
-  - master
-  - develop
+  - master-nbn
 addons:
   apt:
     packages:
